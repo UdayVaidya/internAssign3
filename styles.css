@@ -1,0 +1,96 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: grid;
+    gap: 10px;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Mobile layout (default) */
+.container {
+    grid-template-areas:
+        "header"
+        "content"
+        "signup"
+        "feature1"
+        "feature2"
+        "feature3";
+    grid-template-rows: auto;
+}
+
+.header {
+    grid-area: header;
+    background-color: #8ab6d6;
+    padding: 20px;
+    text-align: center;
+}
+
+.content {
+    grid-area: content;
+    background-color: #d6d6d6;
+    padding: 20px;
+}
+
+.signup {
+    grid-area: signup;
+    background-color: #f9d77e;
+    padding: 20px;
+}
+
+.feature1 {
+    grid-area: feature1;
+    background-color: #f6a4a4;
+    padding: 20px;
+}
+
+.feature2 {
+    grid-area: feature2;
+    background-color: #b6e3a4;
+    padding: 20px;
+}
+
+.feature3 {
+    grid-area: feature3;
+    background-color: #e3a4f6;
+    padding: 20px;
+}
+
+/* Tablet layout */
+@media (min-width: 600px) {
+    .container {
+        grid-template-areas:
+            "header header"
+            "content content"
+            "signup feature1"
+            "feature2 feature3";
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Desktop layout */
+@media (min-width: 992px) {
+    .container {
+        grid-template-areas:
+            "header header header"
+            "feature1 feature2 feature3"
+            "signup signup signup"
+            "content content content";
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
